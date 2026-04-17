@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <section class="hero-card">
+            <div class="hero-copy">
+                <p class="eyebrow">Flask + Scikit-learn</p>
+                <h1>Sentiment Analysis of Text</h1>
+                <p class="intro">
+                    Paste a sentence, review, or short paragraph and the model will classify it as positive or negative
+                    using your saved TF-IDF vectorizer and trained classifier.
+                </p>
+            </div>
+
+            <form method="post" class="analysis-form">
+                <label for="text">Enter text</label>
+                <textarea id="text" name="text" rows="8" placeholder="Example: I absolutely loved the service and the whole experience felt smooth.">{{ text }}</textarea>
+                <button type="submit">Analyze Sentiment</button>
+            </form>
+        </section>
+
+        {% if artifact_issues %}
+            <section class="result-card">
+                <div class="error-box">
+                    <h2>Model Setup Issue</h2>
+                    <p>The app started, but the saved ML artifacts are not usable for prediction yet.</p>
+                    <ul class="issue-list">
+                        {% for issue in artifact_issues %}
+                            <li>{{ issue }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        {% endif %}
+
+        {% if result %}
+            <section class="result-card">
+                {% if result.ok %}
+                    <div class="result-header">
+                        <span class="status-chip {{ 'positive' if result.label == 1 else 'negative' }}">
+                            {{ result.sentiment }}
+                        </span>
+                        {% if result.confidence is not none %}
+                            <span class="confidence-text">Confidence: {{ result.confidence }}%</span>
+                        {% endif %}
+                    </div>
+
+                    {% if result.confidence is not none %}
+                        <div class="confidence-bar">
+                            <div class="confidence-fill {{ 'positive' if result.label == 1 else 'negative' }}" style="width: {{ result.confidence }}%;"></div>
+                        </div>
+                    {% endif %}
+
+                    <div class="detail-grid">
+                        <article>
+                            <h2>Prediction</h2>
+                            <p>The model classified this text as <strong>{{ result.sentiment }}</strong>.</p>
+                        </article>
+                        <article>
+                            <h2>Cleaned Text</h2>
+                            <p>{{ result.cleaned_text }}</p>
+                        </article>
+                    </div>
+                {% else %}
+                    <div class="error-box">
+                        <h2>Input Error</h2>
+                        <p>{{ result.error }}</p>
+                        {% if result.details %}
+                            <ul class="issue-list">
+                                {% for detail in result.details %}
+                                    <li>{{ detail }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </section>
+        {% endif %}
+    </div>
+</body>
+</html>

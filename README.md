@@ -8,7 +8,7 @@ A simple Flask web app for sentiment analysis using a TF-IDF vectorizer and a Lo
 - Text preprocessing that matches the training pipeline
 - Positive/negative sentiment prediction
 - Confidence score display when available
-- Empty input handling 
+- Empty input handling  
 - Training script to regenerate model files
 
 ## Project Structure 

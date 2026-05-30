@@ -3,7 +3,7 @@
 A simple Flask web app for sentiment analysis using a TF-IDF vectorizer and a Logistic Regression model trained on the NLTK `movie_reviews` dataset.
 
 ## Features
- 
+  
 - Flask backend with HTML/CSS frontend
 - Text preprocessing that matches the training pipeline 
 - Positive/negative sentiment prediction  

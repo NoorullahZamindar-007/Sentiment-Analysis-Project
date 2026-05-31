@@ -10,7 +10,7 @@ A simple Flask web app for sentiment analysis using a TF-IDF vectorizer and a Lo
 - Confidence score display when available
 - Empty input handling  
 - Training script to regenerate model files   
- 
+  
 ## Project Structure  
   
 ```text

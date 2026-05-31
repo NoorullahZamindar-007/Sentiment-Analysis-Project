@@ -12,7 +12,7 @@ A simple Flask web app for sentiment analysis using a TF-IDF vectorizer and a Lo
 - Training script to regenerate model files   
  
 ## Project Structure  
- 
+  
 ```text
 Sentiment Analysis Project/
 ├── app.py 

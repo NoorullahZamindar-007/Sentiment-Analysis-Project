@@ -16,7 +16,7 @@ A simple Flask web app for sentiment analysis using a TF-IDF vectorizer and a Lo
 ```text 
 Sentiment Analysis Project/
 ├── app.py 
-├── train.py
+├── train.py 
 ├── requirements.txt
 ├── sentiment_model.pkl
 ├── tfidf_vectorizer.pkl

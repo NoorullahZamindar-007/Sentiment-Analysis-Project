@@ -17,7 +17,7 @@ VECTORIZER_PATH = BASE_DIR / "tfidf_vectorizer.pkl"
 def load_stopwords(): 
     try: 
         return set(stopwords.words("english"))
-    except LookupError:
+    except LookupError: 
         nltk.download("stopwords", quiet=True)
         return set(stopwords.words("english"))
  

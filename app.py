@@ -3,7 +3,7 @@ import re
 
 import joblib 
 import nltk
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request 
 from nltk.corpus import stopwords 
 from sklearn.exceptions import NotFittedError
 from sklearn.utils.validation import check_is_fitted

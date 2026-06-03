@@ -14,7 +14,7 @@ MODEL_PATH = BASE_DIR / "sentiment_model.pkl"
 VECTORIZER_PATH = BASE_DIR / "tfidf_vectorizer.pkl"
   
 
-def load_stopwords():
+def load_stopwords(): 
     try: 
         return set(stopwords.words("english"))
     except LookupError:

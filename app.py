@@ -20,7 +20,7 @@ def load_stopwords():
     except LookupError:
         nltk.download("stopwords", quiet=True)
         return set(stopwords.words("english"))
-
+ 
 
 STOP_WORDS = load_stopwords()
 model = joblib.load(MODEL_PATH)

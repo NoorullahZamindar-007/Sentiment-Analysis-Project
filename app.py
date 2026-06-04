@@ -42,7 +42,7 @@ def validate_artifacts():
         check_is_fitted(vectorizer._tfidf, attributes=["idf_"])
     except (AttributeError, NotFittedError):
         issues.append(
-            "The saved TF-IDF vectorizer is not fitted. Re-export `tfidf_vectorizer.pkl` "
+            "The saved TF-IDF vectorizer is not fitted. Re-export `tfidf_vectorizer.pkl` " 
             "from the notebook after `vectorizer.fit_transform(...)` runs."
         )
 

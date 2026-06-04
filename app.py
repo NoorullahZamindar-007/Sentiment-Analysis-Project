@@ -82,7 +82,7 @@ def analyze_sentiment(text: str):
     if text is None or not text.strip():
         return {
             "ok": False,
-            "error": "Please enter some text before analyzing.",
+            "error": "Please enter some text before analyzing.", 
         }
 
     cleaned_text = clean_text(text)

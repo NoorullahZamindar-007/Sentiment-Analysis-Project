@@ -38,7 +38,7 @@ def validate_artifacts():
         issues.append(f"Missing vectorizer file: {VECTORIZER_PATH.name}")
 
     try:
-        check_is_fitted(vectorizer, attributes=["vocabulary_"])
+        check_is_fitted(vectorizer, attributes=["vocabulary_"]) 
         check_is_fitted(vectorizer._tfidf, attributes=["idf_"])
     except (AttributeError, NotFittedError):
         issues.append(

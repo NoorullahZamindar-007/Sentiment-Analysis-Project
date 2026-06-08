@@ -24,7 +24,7 @@ def load_stopwords():
 
 STOP_WORDS = load_stopwords()
 model = joblib.load(MODEL_PATH)
-vectorizer = joblib.load(VECTORIZER_PATH)
+vectorizer = joblib.load(VECTORIZER_PATH) 
 
 app = Flask(__name__)
 

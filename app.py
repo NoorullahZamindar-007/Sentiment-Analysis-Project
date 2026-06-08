@@ -55,7 +55,7 @@ def validate_artifacts():
 ARTIFACT_ISSUES = validate_artifacts()
 
 
-def clean_text(text: str) -> str:
+def clean_text(text: str) -> str: 
     text = text.lower()
     text = re.sub(r"[^a-zA-Z\s]", "", text)
     text = re.sub(r"\s+", " ", text).strip()

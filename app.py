@@ -33,7 +33,7 @@ def validate_artifacts():
     issues = []
 
     if not MODEL_PATH.exists():
-        issues.append(f"Missing model file: {MODEL_PATH.name}")
+        issues.append(f"Missing model file: {MODEL_PATH.name}") 
     if not VECTORIZER_PATH.exists():
         issues.append(f"Missing vectorizer file: {VECTORIZER_PATH.name}")
 

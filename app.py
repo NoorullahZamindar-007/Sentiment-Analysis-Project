@@ -18,7 +18,7 @@ def load_stopwords():
     try: 
         return set(stopwords.words("english"))
     except LookupError: 
-        nltk.download("stopwords", quiet=True)
+        nltk.download("stopwords", quiet=True) 
         return set(stopwords.words("english"))
  
 

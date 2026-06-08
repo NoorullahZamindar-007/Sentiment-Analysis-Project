@@ -8,7 +8,7 @@ from nltk.corpus import stopwords
 from sklearn.exceptions import NotFittedError
 from sklearn.utils.validation import check_is_fitted 
 
-
+ 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "sentiment_model.pkl"  
 VECTORIZER_PATH = BASE_DIR / "tfidf_vectorizer.pkl"

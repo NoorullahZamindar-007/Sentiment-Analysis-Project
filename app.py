@@ -129,7 +129,7 @@ def index():
         "index.html",
         result=result,
         text=text,
-        artifact_issues=ARTIFACT_ISSUES,
+        artifact_issues=ARTIFACT_ISSUES, 
     )
 
 

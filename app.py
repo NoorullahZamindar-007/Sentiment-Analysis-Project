@@ -2,7 +2,7 @@ from pathlib import Path
 import re 
 
 import joblib  
-import nltk
+import nltk 
 from flask import Flask, jsonify, render_template, request 
 from nltk.corpus import stopwords  
 from sklearn.exceptions import NotFittedError

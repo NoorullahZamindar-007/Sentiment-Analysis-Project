@@ -110,7 +110,7 @@ def analyze_sentiment(text: str):
         "ok": True,
         "sentiment": "Positive" if prediction == 1 else "Negative",
         "label": prediction,
-        "confidence": confidence,
+        "confidence": confidence, 
         "cleaned_text": cleaned_text,
         "original_text": text,
     }

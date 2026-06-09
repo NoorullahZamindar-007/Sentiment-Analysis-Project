@@ -72,7 +72,7 @@ def get_confidence(features):
 
 
 def analyze_sentiment(text: str):
-    if ARTIFACT_ISSUES:
+    if ARTIFACT_ISSUES: 
         return {
             "ok": False,
             "error": "Model files are not ready for prediction.",

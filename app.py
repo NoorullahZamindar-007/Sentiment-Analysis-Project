@@ -47,7 +47,7 @@ def validate_artifacts():
         )
 
     if not hasattr(model, "predict"):
-        issues.append("The saved model does not expose a `predict()` method.")
+        issues.append("The saved model does not expose a `predict()` method.") 
 
     return issues
 
